@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST" class="employee-form">
+        <h2>DATOS DEL EMPLEADO</h2>
+        
+        <div class="form-group">
+            <label for="codigo">Código</label>
+            <input type="text" id="codigo" name="codigo">
+        </div>
+
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos">
+        </div>
+
+        <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" id="nombres" name="nombres">
+        </div>
+
+        <div class="form-group">
+            <label for="cargo">Cargo</label>
+            <input type="text" id="cargo" name="cargo">
+        </div>
+
+        <div class="form-group">
+            <label for="sueldo">Sueldo</label>
+            <input type="number" id="sueldo" name="sueldo" min="0">
+        </div>
+
+        <fieldset class="category-group">
+            <legend>Categoría</legend>
+            <label>
+                <input type="radio" name="categoria" value="A1" id="cat-a1"> A1
+            </label>
+            <label>
+                <input type="radio" name="categoria" value="A2" id="cat-a2"> A2
+            </label>
+            <label>
+                <input type="radio" name="categoria" value="A3" id="cat-a3"> A3
+            </label>
+        </fieldset>
+
+        <fieldset class="deductions-group">
+            <legend>Descuentos / Retenciones</legend>
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="fonavi" value="7" id="chk-fonavi">
+                    Aplicar EdFonavi 7%
+                </label>
+            </div>
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="renta" value="10" id="chk-renta">
+                    Aplicar Retención Imp. a la Renta 10%
+                </label>
+            </div>
+        </fieldset>
+        
+        <hr> <h3>Cálculos de Remuneración</h3>
+
+        <div class="form-group">
+            <label for="bonificacion">Bonificación según categoría</label>
+            <input type="text" id="bonificacion" name="bonificacion" readonly> 
+        </div>
+
+        <div class="form-group">
+            <label for="total-honorarios">Total Honorarios</label>
+            <input type="text" id="total-honorarios" name="total_honorarios" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="edfonavi">EdFonavi 7% (Retenido)</label>
+            <input type="text" id="edfonavi" name="edfonavi_calculado" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="impuesto-renta">Retención Imp. a la Renta 10% (Retenido)</label>
+            <input type="text" id="impuesto-renta" name="renta_calculada" readonly>
+        </div>
+
+        <div class="form-group total-neto">
+            <label for="total-neto">Total Neto</label>
+            <input type="text" id="total-neto" name="total_neto" readonly>
+        </div>
+
+        <button type="submit">Calcular y Enviar</button>
+
+    </form>
+
+   
+    
+</body>
+</html>
