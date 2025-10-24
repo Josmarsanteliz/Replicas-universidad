@@ -25,25 +25,31 @@
         </div>
 
         <div class="form-group">
-            <label for="cargo">Cargo</label>
-            <input type="text" id="cargo" name="cargo">
+            <label for="cargo">Selecciona: un cargo</label>
+                <select id="cargo" name="cargo" onchange="calcularTotal()">
+                    <option value="">-- Elige una opción --</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Gerente">Gerente</option>
+                    <option value="Contador">Contador</option>
+                </select>
         </div>
 
         <div class="form-group">
             <label for="sueldo">Sueldo</label>
-            <input type="number" id="sueldo" name="sueldo" min="0">
+            <!-- Readonly evita que cambie el usuario el input de manera manual -->
+            <input type="number" id="sueldo" name="sueldo" min="0" readonly>
         </div>
 
         <fieldset class="category-group">
             <legend>Categoría</legend>
             <label>
-                <input type="radio" name="categoria" value="A1" id="cat-a1"> A1
+                <input type="radio" name="categoria" value="A1" id="cat-a1" onchange="calcularTotal()"> A1
             </label>
             <label>
-                <input type="radio" name="categoria" value="A2" id="cat-a2"> A2
+                <input type="radio" name="categoria" value="A2" id="cat-a2" onchange="calcularTotal()"> A2
             </label>
             <label>
-                <input type="radio" name="categoria" value="A3" id="cat-a3"> A3
+                <input type="radio" name="categoria" value="A3" id="cat-a3" onchange="calcularTotal()"> A3
             </label>
         </fieldset>
 
@@ -93,7 +99,9 @@
         <button type="submit">Calcular y Enviar</button>
 
     </form>
-
+<script src="scripts.js">
+    
+</script>
    
     
 </body>
