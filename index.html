@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculos</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <form action="" method="POST" class="employee-form">
@@ -83,12 +84,12 @@
 
         <div class="form-group">
             <label for="edfonavi">EdFonavi 7% (Retenido)</label>
-            <input type="text" id="edfonavi" name="edfonavi_calculado" readonly>
+            <input type="text" id="edfonavi" name="edfonavi_calculado" onchange="calcularTotal()">
         </div>
 
         <div class="form-group">
             <label for="impuesto-renta">Retención Imp. a la Renta 10% (Retenido)</label>
-            <input type="text" id="impuesto-renta" name="renta_calculada" readonly>
+            <input type="text" id="impuesto-renta" name="renta_calculada"  onchange="calcularTotal()">
         </div>
 
         <div class="form-group total-neto">

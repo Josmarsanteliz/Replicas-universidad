@@ -45,7 +45,37 @@ function calcularTotal() {
     document.getElementById('bonificacion').value = bonificacion.toFixed(2);
     //Actualizar total de honorarios (sueldo)
     const totalHonorarios = sueldo + bonificacion;
-    document.getElementById('total-honorarios').value = totalhonorarios.toFixed(2);
+    document.getElementById('total-honorarios').value = totalHonorarios.toFixed(2);
+    
+    //calculo de retenciones
+
+const chkFonavi = document.getElementById("chk-fonavi");
+const chkRenta = document.getElementById("chk-renta");
+
+let fonaviMonto = 0;
+let rentaMonto = 0; 
+
+if (chkFonavi.checked) {
+    const porcentajeFonavi = parseFloat(chkFonavi.value)/100;
+    fonaviMonto = sueldo * porcentajeFonavi;
+}
+
+if (chkRenta.checked) {
+    const porcentajeRenta = parseFloat(chkRenta.value)/100;
+    rentaMonto = sueldo * porcentajeRenta;
+}
+
+//mostrar los montos calculados
+
+document.getElementById("edfonavi").value = fonaviMonto.toFixed(2);
+document.getElementById("impuesto-renta").value = rentaMonto.toFixed(2);
+
+const totalRetenciones = fonaviMonto + rentaMonto;
+
+
+const totalNeto = totalHonorarios - totalRetenciones;
+document.getElementById('total-neto').value = totalNeto.toFixed(2);
 
 }
+
 

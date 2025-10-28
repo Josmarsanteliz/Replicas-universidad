@@ -1,0 +1,177 @@
+/* VARIABLES GLOBALES (opcional, pero útil para mantener la consistencia) */
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #6c757d; /* Gris para textos secundarios */
+    --background-color: #f8f9fa; /* Fondo claro */
+    --card-background: #ffffff; /* Fondo del formulario (blanco) */
+    --border-color: #ced4da;
+    --success-color: #28a745; /* Verde para total neto */
+}
+
+/* ESTILOS GLOBALES Y DE CUERPO */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centrar el formulario horizontalmente */
+    align-items: flex-start; /* Alinear arriba */
+    min-height: 100vh;
+}
+
+/* ESTILO DEL FORMULARIO */
+.employee-form {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.employee-form h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.employee-form h3 {
+    color: var(--secondary-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* GRUPOS DE FORMULARIO (CAMPOS INDIVIDUALES) */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #343a40;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* ESTILOS ESPECÍFICOS PARA SUELDOS Y CALCULOS READONLY */
+.form-group input[readonly] {
+    background-color: #e9ecef; /* Un gris suave para indicar que es de solo lectura */
+    color: #495057;
+    font-weight: bold;
+}
+
+/* GRUPOS DE CAMPO (FIELDSET) */
+fieldset {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+fieldset legend {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 10px;
+}
+
+/* ESTILO PARA CATEGORÍAS (RADIO BUTTONS) */
+.category-group label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* ESTILO PARA RETENCIONES (CHECKBOXES) */
+.checkbox-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* ESTILO PARA EL TOTAL NETO (Destacado) */
+.total-neto {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 2px dashed var(--secondary-color);
+}
+
+.total-neto label {
+    font-size: 1.2em;
+    color: var(--success-color); /* Color de éxito/positivo */
+}
+
+.total-neto input {
+    font-size: 1.4em;
+    color: var(--success-color) !important;
+    background-color: #e6ffec !important; /* Fondo más claro para destacar */
+    border: 2px solid var(--success-color) !important;
+    padding: 15px 10px !important;
+}
+
+/* ESTILO DEL BOTÓN */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Un azul más oscuro al pasar el ratón */
+}
+
+button[type="submit"]:active {
+    transform: scale(0.99);
+}
+
+/* ESTILO PARA LA LÍNEA SEPARADORA */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--secondary-color), rgba(0, 0, 0, 0));
+    margin: 25px 0;
+}
+
+/* RESPONSIVIDAD BÁSICA PARA PANTALLAS PEQUEÑAS */
+@media (max-width: 650px) {
+    .employee-form {
+        padding: 20px;
+        margin: 10px;
+        box-shadow: none; /* Eliminar sombra en móviles para una mejor apariencia */
+    }
+
+    body {
+        padding: 0;
+    }
+}
